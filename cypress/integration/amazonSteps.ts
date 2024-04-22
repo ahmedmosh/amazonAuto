@@ -11,12 +11,12 @@ When("I click on the hamburger menu", () => {
     amazonPage.clickHamburgerMenu();
 });
 
-When("I click on {string}", (menuItem: string) => {
-    amazonPage.clickMenuItem(menuItem);
+When("I click on Computers", (menuItem: string) => {
+    amazonPage.clickComputers(menuItem);
 });
 
-When("I filter the results by Brand {string}", (brand: string) => {
-    amazonPage.filterResultsByBrand(brand);
+When("I filter the results by JETech", (JETech: string) => {
+    amazonPage.filterResultsByJETEch(JETech);
 });
 
 When("I sort the JETech results by {string}", (sortOption: string) => {
