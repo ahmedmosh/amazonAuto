@@ -1,4 +1,4 @@
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps";
 import AmazonPage from "../page_objects/amazonPage";
 
 const amazonPage = new AmazonPage();
@@ -11,20 +11,24 @@ When("I click on the hamburger menu", () => {
     amazonPage.clickHamburgerMenu();
 });
 
-When("I click on Computers", (menuItem: string) => {
-    amazonPage.clickComputers(menuItem);
+And("I click on Computers", () => {
+    amazonPage.clickComputers("Computers");
 });
 
-When("I filter the results by JETech", (JETech: string) => {
-    amazonPage.filterResultsByJETEch(JETech);
+And("I click on scanners", () => {
+    amazonPage.clickScanners("Scanners")
 });
 
-When("I sort the JETech results by {string}", (sortOption: string) => {
-    amazonPage.sortResultsBy(sortOption);
+And("I filter by featured brands fujitsu", () => {
+    amazonPage.filterResultsByFujitsu("Fujitsu");
+});
+
+And("I sort the Fujitsu results by Newests arrival", (sortOption: string) => {
+    amazonPage.sortResultsBy("Newest Arrivals");
 });
 
 When("I click on the lowest priced item", () => {
-    amazonPage.clickLowestPricedItem();
+    amazonPage.clickLowestPricedItem("");
 });
 
 When("I switch the window", () => {
